@@ -1,0 +1,17 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-service80
+
+#eureka的配置
+eureka:
+  client:
+    register-with-eureka: true     #false表示不向注册中心注册自己。
+    fetch-registry: true     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      #集群指向其它eureka
+      #defaultZone: http://eureka7002.com:7002/eureka/
+      #单机就是7001自己
+      defaultZone: http://localhost:7001/eureka/ , http://localhost:7002/eureka/
